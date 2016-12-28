@@ -25,7 +25,7 @@ class ScheduleController extends Controller
 
         if($form->isSubmitted() && $form->isValid() && $request->isMethod("POST"))
         {
-            $
+
         }
         return $this->render('default/schedule.html.twig', array('form' => $form->createView()));
     }
