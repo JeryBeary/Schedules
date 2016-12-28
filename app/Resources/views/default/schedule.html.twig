@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/schedule.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class = "header">
+        <p>Schedule</p>
+        <a id = "logout_link" href = "{{ path('logout') }}">Logout</a>
+    </div>
+
+    <button id="add_event" data-toggle="modal" data-target="#new_event_modal"><i class="fa fa-plus"></i></button>
+
+    <div id="new_event_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">New Event</h4>
+                </div>
+                <div class="modal-body">
+                    {{ form_start(form, {'method': 'POST'}) }}
+                        {% block _description_entry_widget %}
+                            <p class = "group">
+                                {{ form_widget(form.text) }}
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                {{ form_label(form.text) }}
+                            </p>
+                        {% endblock %}
+                        {% block _time_entry_widget %}
+                            <p class = "time-input">
+                                {{ form_label(form.time) }}
+                                <br>
+                                {{ form_widget(form.time) }}
+                            </p>
+                        {% endblock %}
+                        {% block _submit_entry_widget%}
+                            <p class = "submit-register">
+                                {{ form_widget(form.submit) }}
+                            </p>
+                        {% endblock %}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+
+        </div>
+        </div>
+{% endblock %}
+
+
+
+

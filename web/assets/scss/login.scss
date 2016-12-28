@@ -1,0 +1,122 @@
+@import "globals";
+
+$title-box-top: 60px;
+$title-font-size: 50px;
+
+#title {
+  margin-top: $title-box-top;
+  text-align: center;
+  font-size: $title-font-size;
+  font-family: Roboto, sans-serif;
+  color: $cyan1;
+}
+
+$login-box-height: 400px;
+$login-box-width: 600px;
+$login-box-padding-top: 50px;
+$label-font-color: $secondary-black;
+$label-font-size: 15px;
+$label-font-family: helvetica, sans-serif;
+$input-height: 30px;
+$input-width: 300px;
+$input-text-size: 17px;
+$input-text-color: $primary-black;
+$submit-register-width: 200px;
+$submit-register-height: 40px;
+$submit-text-size: 17px;
+$submit-color: #ffffff;
+$submit-margin-top: 10px;
+$error-msg-top: 60px;
+$error-msg-color: red;
+$error-msg-font: helvetica, sans-serif;
+
+#login_box {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15px;
+  background-color: $light_grey;
+  min-height: $login_box_height;
+  width: $login_box_width;
+  -webkit-box-shadow: $box-shadow-light;
+  -moz-box-shadow: $box-shadow-light;
+  box-shadow: $box-shadow-light;
+
+  #error_msg{
+    width: 300px;
+    font-weight: 200;
+    text-align: left;
+    margin-top: $error-msg-top;
+    margin-left: auto;
+    margin-right: auto;
+    color: $error-msg-color;
+    font-family: $error-msg-font;
+  }
+
+  form {
+
+    label{
+      box-sizing: border-box;
+      text-align: left;
+      color: $label-font-color;
+      font-size: $label-font-size;
+      font-family: $label-font-family;
+      font-weight: 400;
+    }
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: $input-width + 10px;
+
+      input[type="text"], input[type="password"] {
+        margin: 0 auto;
+        border-radius: $curved-border;
+        height: $input-height;
+        width: $input-width;
+        border: 1px solid #e6e6e6;
+        font-size: $input-text-size;
+        color: $primary-black;
+      }
+      }
+
+    .submit-register {
+      text-align: center;
+
+      button {
+        margin-top: $submit-margin-top;
+        background-color: $pink;
+        width: $submit-register-width;
+        height: $submit-register-height;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: $submit-text-size;
+        color: $secondary;
+      }
+    }
+  }
+}
+
+$tab-height: 40px;
+$tab-active-background-color: white;
+$tab-active-border-top: 2px solid $pink;
+
+#signup_tab{
+  border-right: $light-border;
+}
+
+.tab {
+  width: 50%;
+  height: $tab-height;
+  float: left;
+  text-align: center;
+  line-height: 35px;
+  border-bottom: $light-border;
+
+  &.active {
+    background-color: $tab-active-background-color;
+    border-top: $tab-active-border-top;
+  }
+}
+

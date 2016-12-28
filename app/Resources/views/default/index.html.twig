@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 id = "title">Schedules</h1>
+    <div id = "login_box">
+        <a id = "signup_tab" class = "tab active" href = "{{ path('register') }}">Sign Up</a>
+        <a id = "login_tab" class = "tab" href = "{{ path('login') }}">Login</a>
+        <br>
+        <h5 id = "error_msg">{{ error_msg }}</h5>
+        {{ form_start(form, {'method': 'POST'}) }}
+            {% block _username_entry_widget %}
+                <p class = "username-input-register">
+                    {{ form_label(form.username) }}
+                    <br>
+                    {{ form_widget(form.username) }}
+                </p>
+            {% endblock %}
+            {% block _password_entry_widget%}
+                <p class = "password-input-register">
+                    {{ form_label(form.plainPassword.pass) }}
+                    <br>
+                    {{ form_widget(form.plainPassword.pass) }}
+                </p>
+            {% endblock %}
+            {% block _password_confirm_entry_widget %}
+                <p class = "password-confirm-register">
+                    {{ form_label(form.plainPassword.confirm) }}
+                    <br>
+                    {{ form_widget(form.plainPassword.confirm) }}
+                </p>
+            {% endblock %}
+            {% block _submit_entry_widget%}
+                <p class = "submit-register">
+                    {{ form_widget(form.save) }}
+                </p>
+            {% endblock %}
+        {{  form_end(form) }}
+    </div>
+{% endblock %}
+
+
