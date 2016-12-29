@@ -17,7 +17,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class SecurityController extends Controller
 {
     /**
+     * loginAction
      * @Route("/login", name="login")
+     *
+     * renders login page, including the login form
+     *
+     * @param $request: request to page
+     * @return Request render of login page
      */
     public function loginAction(Request $request)
     {

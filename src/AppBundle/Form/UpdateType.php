@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: JeryBeary
- * Date: 12/26/16
- * Time: 9:02 PM
+ * Date: 12/29/16
+ * Time: 3:45 PM
  */
 
 namespace AppBundle\Form;
@@ -15,7 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
-class EventType extends AbstractType
+class UpdateType extends AbstractType
 {
     /**
      * buildForm

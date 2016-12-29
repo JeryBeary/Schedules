@@ -25,4 +25,23 @@ class EventManager
         $this->em->persist($event);
         $this->em->flush();
     }
+
+    public function deleteEvent($event_id)
+    {
+        $event = $this->em->getRepository('AppBundle:Event')
+            ->find($event_id);
+
+        if($event) {
+            $this->em->remove($event);
+            $this->em->flush();
+        }
+    }
+
+    public function getEventByUserId($user_id)
+    {
+        $events = $this->em->getRepository('AppBundle:Event')
+            ->findBy(array('user_id' => $user_id), array('time' => 'ASC'));
+
+        return $events;
+    }
 }

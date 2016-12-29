@@ -77,7 +77,7 @@ $submit-margin-top: 10px;
 
           .time-input {
             color: $hint-black;
-            font-family: Roboto;
+            font-family: Roboto, sans-serif;
             font-weight: 300;
           }
 
@@ -191,6 +191,84 @@ $submit-margin-top: 10px;
           }
         }
       }
+    }
+  }
+}
+
+#events {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+
+  .event-box {
+    background-color: white;
+    width: 100%;
+    margin-top: 10px;
+    height: 80px;
+    -webkit-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.75);
+
+    .time {
+      height: 100%;
+      width: 20%;
+      border-right: $light-border;
+      float: left;
+
+      .content {
+        position: relative;
+        left: 8px;
+        top: 10px;
+        color: $hint-black;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: $roboto;
+      }
+    }
+
+    .text {
+      width: 70%;
+      height: 100%;
+      float: left;
+
+      .label {
+        position: relative;
+        left: 5px;
+        top: 2px;
+        color: $cyan1;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: $roboto;
+      }
+
+      .content {
+        position: relative;
+        left: 14px;
+        top: 10px;
+        color: $secondary-black;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: $roboto;
+      }
+    }
+
+    .delete {
+      float: right;
+      position: relative;
+      color: $hint-black;
+    }
+
+    .update {
+      float: right;
+      position: relative;
+      color: $hint-black;
+      border: none;
+      background-color: white;
+    }
+
+    .update:focus {
+      outline: none;
     }
   }
 }

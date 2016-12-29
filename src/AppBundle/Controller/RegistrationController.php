@@ -17,6 +17,14 @@ use Symfony\Component\HttpFoundation\Request;
 
 class RegistrationController extends Controller
 {
+    /**
+     * registerAction
+     *
+     * loads registration page, including form functionality
+     *
+     * @param Request $request: request to page
+     * @return Request render of the page with the form or redirect to login page
+     */
     public function registerAction(Request $request)
     {
         //building form
@@ -29,6 +37,7 @@ class RegistrationController extends Controller
 
         if($form->isSubmitted() && $form->isValid() && $request->isMethod("POST"))
         {
+            //bcrypt encoding of inputted password for security
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);

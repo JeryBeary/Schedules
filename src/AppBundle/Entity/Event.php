@@ -35,6 +35,11 @@ class Event
      */
     private $text;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $user_id;
+
     public function getId()
     {
         return $this->id;
@@ -65,5 +70,14 @@ class Event
         $this->text = $text;
     }
 
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+    }
 
 }
